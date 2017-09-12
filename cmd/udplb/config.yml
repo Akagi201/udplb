@@ -1,0 +1,11 @@
+upstreams:
+ - name: static_servers
+   hash: remote_ip
+   targets:
+    - 127.0.0.1
+
+servers:
+  - bind: 0.0.0.0
+    port: 2201
+    proto: udp
+    pass: static_servers:2202
